@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>xTymezz - Portfolio</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=VT323&amp;display=swap" rel="stylesheet">
+        <style>
+        body {
+                background: rgb(27, 27, 27);
+                color: white;
+                font-family: "VT323", monospace;
+                margin: 0;
+                padding: 20px;
+            }
+
+        #githubimg {
+            border-radius: 11.5px;
+            width: 125px;
+            height: 125px;
+            border: 2px solid green;
+            transition: transform 0.2s ease;
+        }
+
+        #githubimg:hover {
+            transform: scale(1.05);
+        }
+        
+        #text {
+            text-shadow: 3px 6px 4px rgba(0, 128, 0, 0.3);
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .bio {
+            font-size: 1.35rem;
+            max-width: 600px;
+            line-height: 1.4;
+        }
+
+        .lang-icons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .lang-icons img {
+            width: 42px;
+            height: 42px;
+        }
+
+        /* --- Repositories Section --- */
+        .section-title {
+            color: green;
+            text-shadow: 2px 4px 3px rgba(0, 128, 0, 0.3);
+            font-size: 2.2rem;
+            margin-top: 40px;
+            margin-bottom: 15px;
+        }
+
+        #repos-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: left;
+            padding: 10px;
+        }
+
+        .repo-card {
+            background: #141414;
+            border: 2px solid #008000;
+            border-radius: 8px;
+            padding: 16px;
+            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .repo-card:hover {
+            transform: translateY(-4px);
+            border-color: #33ff33;
+            box-shadow: 0 6px 16px rgba(51, 255, 51, 0.25);
+        }
+
+        .repo-name {
+            color: #33ff33;
+            font-size: 1.6rem;
+            text-decoration: none;
+            word-break: break-word;
+        }
+
+        .repo-name:hover {
+            text-decoration: underline;
+        }
+
+        .repo-desc {
+            color: #cccccc;
+            font-size: 1.15rem;
+            margin: 10px 0 15px 0;
+            flex-grow: 1;
+        }
+
+        .repo-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.1rem;
+            color: #888888;
+            border-top: 1px dashed #333333;
+            padding-top: 8px;
+        }
+
+        .repo-lang {
+            color: #f5de19;
+        }
+
+        .status-msg {
+            font-size: 1.4rem;
+            color: #888888;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1 style='color: green' id="text">xTymezz</h1>
+        <a href="https://github.com/fete3712-vmX" target="_blank" rel="noopener noreferrer">
+            <img src="https://avatars.githubusercontent.com/u/286108117?v=4" id="githubimg" alt="GitHub Avatar"/>
+        </a>
+        
+        <br><br>
+        <div class="bio">
+            Hello, my name is xTymezz. I'm a Polish programmer. I want an information technology class, but we don't have it yet.
+            <br><br>
+            <span>Languages:</span>
+            <div class="lang-icons">
+                <!-- JS -->
+                <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBMaWNlbnNlOiBNSVQuIE1hZGUgYnkgdnNjb2RlLWljb25zOiBodHRwczovL2dpdGh1Yi5jb20vdnNjb2RlLWljb25zL3ZzY29kZS1pY29ucyAtLT4KPHN2ZyB3aWR0aD0iODAwcHgiIGhlaWdodD0iODAwcHgiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+ZmlsZV90eXBlX2pzPC90aXRsZT48cGF0aCBkPSJNMTguNzc0LDE5LjdhMy43MjcsMy43MjcsMCwwLDAsMy4zNzYsMi4wNzhjMS40MTgsMCwyLjMyNC0uNzA5LDIuMzI0LTEuNjg4LDAtMS4xNzMtLjkzMS0xLjU4OS0yLjQ5MS0yLjI3MmwtLjg1Ni0uMzY3Yy0yLjQ2OS0xLjA1Mi00LjExLTIuMzctNC4xMS01LjE1NiwwLTIuNTY3LDEuOTU2LTQuNTIsNS4wMTItNC41MkE1LjA1OCw1LjA1OCwwLDAsMSwyNi45LDEwLjUybC0yLjY2NSwxLjcxMWEyLjMyNywyLjMyNywwLDAsMC0yLjItMS40NjcsMS40ODksMS40ODksMCwwLDAtMS42MzgsMS40NjdjMCwxLjAyNy42MzYsMS40NDIsMi4xLDIuMDc4bC44NTYuMzY2YzIuOTA4LDEuMjQ3LDQuNTQ5LDIuNTE4LDQuNTQ5LDUuMzc2LDAsMy4wODEtMi40Miw0Ljc2OS01LjY3MSw0Ljc2OWE2LjU3NSw2LjU3NSwwLDAsMS02LjIzNi0zLjVaTTYuNjg2LDIwYy41MzguOTU0LDEuMDI3LDEuNzYsMi4yLDEuNzYsMS4xMjQsMCwxLjgzNC0uNDQsMS44MzQtMi4xNVY3Ljk3NWgzLjQyMlYxOS42NThjMCwzLjU0My0yLjA3OCw1LjE1Ni01LjExLDUuMTU2QTUuMzEyLDUuMzEyLDAsMCwxLDMuOSwyMS42ODhaIiBzdHlsZT0iZmlsbDojZjVkZTE5Ii8+PC9zdmc+" alt="JavaScript"/>
+                <!-- HTML -->
+                <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KCjxzdmcgd2lkdGg9IjgwMHB4IiBoZWlnaHQ9IjgwMHB4IiB2aWV3Qm94PSIwIDAgMzIgMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHRpdGxlPmZpbGVfdHlwZV9odG1sPC90aXRsZT48cG9seWdvbiBwb2ludHM9IjUuOTAyIDI3LjIwMSAzLjY1NSAyIDI4LjM0NSAyIDI2LjA5NSAyNy4xOTcgMTUuOTg1IDMwIDUuOTAyIDI3LjIwMSIgc3R5bGU9ImZpbGw6I2U0NGYyNiIvPjxwb2x5Z29uIHBvaW50cz0iMTYgMjcuODU4IDI0LjE3IDI1LjU5MyAyNi4wOTIgNC4wNjEgMTYgNC4wNjEgMTYgMjcuODU4IiBzdHlsZT0iZmlsbDojZjE2NjJhIi8+PHBvbHlnb24gcG9pbnRzPSIxNiAxMy40MDcgMTEuOTEgMTMuNDA3IDExLjYyOCAxMC4yNDIgMTYgMTAuMjQyIDE2IDcuMTUxIDE1Ljk4OSA3LjE1MSA4LjI1IDcuMTUxIDguMzI0IDcuOTgxIDkuMDgzIDE2LjQ5OCAxNiAxNi40OTggMTYgMTMuNDA3IiBzdHlsZT0iZmlsbDojZWJlYmViIi8+PHBvbHlnb24gcG9pbnRzPSIxNiAyMS40MzQgMTUuOTg2IDIxLjQzOCAxMi41NDQgMjAuNTA5IDEyLjMyNCAxOC4wNDQgMTAuNjUxIDE4LjA0NCA5LjIyMSAxOC4wNDQgOS42NTQgMjIuODk2IDE1Ljk4NiAyNC42NTQgMTYgMjQuNjUgMTYgMjEuNDM0IiBzdHlsZT0iZmlsbDojZWJlYmViIi8+PHBvbHlnb24gcG9pbnRzPSIxNS45ODkgMTMuNDA3IDE1Ljk4OSAxNi40OTggMTkuNzk1IDE2LjQ5OCAxOS40MzcgMjAuNTA3IDE1Ljk4OSAyMS40MzcgMTUuOTg5IDI0LjY1MyAyMi4zMjYgMjIuODk2IDIyLjM3MiAyMi4zNzQgMjMuMDk4IDE0LjIzNyAyMy4xNzQgMTMuNDA3IDIyLjM0MSAxMy40MDcgMTUuOTg5IDEzLjQwNyIgc3R5bGU9ImZpbGw6I2ZmZiIvPjxwb2x5Z29uIHBvaW50cz0iMTUuOTg5IDcuMTUxIDE1Ljk4OSA5LjA3MSAxNS45ODkgMTAuMjM1IDE1Ljk4OSAxMC4yNDIgMjMuNDQ1IDEwLjI0MiAyMy40NDUgMTAuMjQyIDIzLjQ1NSAxMC4yNDIgMjMuNTE3IDkuNTQ4IDIzLjY1OCA3Ljk4MSAyMy43MzIgNy4xNTEgMTUuOTg5IDcuMTUxIiBzdHlsZT0iZmlsbDojZmZmIi8+PC9zdmc+" alt="HTML"/>
+                <!-- Lua -->
+                <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KCjxzdmcgd2lkdGg9IjgwMHB4IiBoZWlnaHQ9IjgwMHB4IiB2aWV3Qm94PSIwIDAgMzIgMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHRpdGxlPmZpbGVfdHlwZV9sdWE8L3RpdGxlPjxwYXRoIGQ9Ik0xNi41LDMwbC0uMDExLS4zMjFjLjQtLjAxNC44LS4wNDUsMS4xOS0uMDk0bC4wMzkuMzE5QzE3LjMxMiwyOS45NTIsMTYuOSwyOS45ODQsMTYuNSwzMFptLTEuMjIyLS4wMTFjLS40LS4wMjEtLjgxNC0uMDYxLTEuMjE2LS4xMThsLjA0NS0uMzE4Yy4zOTMuMDU1Ljc5My4wOTQsMS4xODguMTE1Wk0xOC45MiwyOS43bC0uMDY3LS4zMTRjLjM4Ny0uMDgzLjc3Ni0uMTg0LDEuMTU1LS4zbC4wOTQuMzA3QzE5LjcxNCwyOS41MTEsMTkuMzE2LDI5LjYxNSwxOC45MiwyOS43Wm0tNi4wNjMtLjA1M2MtLjQtLjA5MS0uNzkxLS4yLTEuMTc3LS4zMjZsLjEtLjMwNmMuMzc3LjEyMi43NjQuMjMsMS4xNS4zMTlabTguNC0uNjY1LS4xMjEtLjNjLjM2NC0uMTQ4LjcyOC0uMzE0LDEuMDgtLjQ5M2wuMDA2LDAsLjE0NS4yODYsMCwwQzIyLDI4LjY2MSwyMS42MjYsMjguODMxLDIxLjI1MywyOC45ODJabS0xMC43MTgtLjA4OGMtLjM3NC0uMTU4LS43NDUtLjMzNS0xLjEtLjUyNGwuMTUtLjI4NGMuMzUuMTg2LjcxMy4zNTgsMS4wNzguNTEyWm0xMi44OTMtMS4wMjEtLjE3LS4yNzNjLjMzNy0uMjEuNjY4LS40MzcuOTg0LS42NzVsLjE5My4yNTdDMjQuMTExLDI3LjQyNSwyMy43NzIsMjcuNjU4LDIzLjQyOCwyNy44NzNaTTguMzc5LDI3Ljc1MWMtLjM0MS0uMjItLjY3Ni0uNDU5LTEtLjcwOGwuMi0uMjUzYy4zMTIuMjQzLjY0LjQ3Ni45NzIuNjkxWm0xNy0xLjM0Ni0uMjE1LS4yMzljLjI5NC0uMjY1LjU4LS41NDYuODUxLS44MzZsLjIzNS4yMTlDMjUuOTcyLDI1Ljg0NiwyNS42NzksMjYuMTM0LDI1LjM3OCwyNi40Wk02LjQ1NCwyNi4yNTJjLS4zLS4yNzYtLjU4NS0uNTY5LS44NTYtLjg3bC4yMzktLjIxNWMuMjY1LjI5NC41NDcuNTguODM2Ljg1Wk0yNy4wNDEsMjQuNjJsLS4yNTMtLjJjLjI0NC0uMzEyLjQ3Ni0uNjM5LjY5Mi0uOTcybC4yNy4xNzVDMjcuNTI5LDIzLjk2NiwyNy4yOSwyNC4zLDI3LjA0MSwyNC42MlpNNC44MiwyNC40MzljLS4yNDQtLjMyNC0uNDc2LS42NjItLjY5Mi0xLjAwN2wuMjcyLS4xN2MuMjEuMzM3LjQzOC42NjguNjc2Ljk4NFptMjMuNTQ3LTEuODY3LS4yODQtLjE1MWMuMTg2LS4zNS4zNTgtLjcxMy41MTMtMS4wNzhsLjMuMTI1QzI4LjczNSwyMS44NDMsMjguNTU4LDIyLjIxNCwyOC4zNjgsMjIuNTcyWm0tMjQuODQxLS4yLS4wMDYtLjAxMmMtLjE4My0uMzU5LS4zNTItLjcyOC0uNS0xLjFsLjMtLjEyMWMuMTQ3LjM2Mi4zMTIuNzI0LjQ5MSwxLjA3NGwuMDA2LjAxMlpNMjkuMzIsMjAuMzI1bC0uMzA2LS4xYy4xMjItLjM3Ny4yMy0uNzY0LjMxOS0xLjE1bC4zMTMuMDcyQzI5LjU1NSwxOS41NDMsMjkuNDQ2LDE5LjkzOSwyOS4zMiwyMC4zMjVaTTIuNjA4LDIwLjEwN2MtLjEyLS4zODgtLjIyMy0uNzg2LS4zMDgtMS4xODJsLjMxNC0uMDY3Yy4wODMuMzg3LjE4NC43NzYuMywxLjE1NVpNMjkuODcsMTcuOTQ2bC0uMzE4LS4wNDVjLjA1Ni0uMzkzLjA5NC0uNzkzLjExNS0xLjE4OGwuMzIxLjAxN0MyOS45NjcsMTcuMTM1LDI5LjkyNywxNy41NDQsMjkuODcsMTcuOTQ2Wk0yLjEsMTcuNzJjLS4wNS0uNC0uMDgyLS44MTItLjEtMS4yMThsLjMyMS0uMDExYy4wMTQuNC4wNDYuOC4wOTQsMS4xOVptMjcuNTgyLTIuMmMtLjAxNC0uNC0uMDQ1LS44LS4wOTMtMS4xOWwuMzE5LS4wMzljLjA0OS40LjA4Mi44MTMuMSwxLjIxOFpNMi4zMzEsMTUuMywyLjAxLDE1LjI4Yy4wMjEtLjQwNS4wNjEtLjgxNC4xMTctMS4yMTZsLjMxOC4wNDVDMi4zOSwxNC41LDIuMzUyLDE0LjksMi4zMzEsMTUuM1ptMjcuMDU3LTIuMTQ0Yy0uMDgzLS4zODctLjE4NC0uNzc2LS4zLTEuMTU1TDI5LjQsMTEuOWMuMTE5LjM4OC4yMjMuNzg2LjMwNywxLjE4M1pNMi42NjMsMTIuOTM0bC0uMzEzLS4wNzJjLjA5MS0uNC4yLS43OTEuMzI2LTEuMTc3bC4zMDYuMUMyLjg1OSwxMi4xNjEsMi43NTIsMTIuNTQ4LDIuNjYzLDEyLjkzNFptMjYuMDI2LTIuMDYyYy0uMTQ5LS4zNjYtLjMxNS0uNzMyLS41LTEuMDg2bC4yODYtLjE0NmMuMTg1LjM2My4zNTUuNzM2LjUwNywxLjExMVpNMy40LDEwLjY2NWwtLjMtLjEyNWMuMTU4LS4zNzQuMzM0LS43NDUuNTI0LTEuMWwuMjg0LjE1QzMuNzI0LDkuOTM3LDMuNTUyLDEwLjMsMy40LDEwLjY2NVpNNC41MTMsOC41NTdsLS4yNy0uMTc0Yy4yMi0uMzQxLjQ1OC0uNjc2LjcwNy0xbC4yNTQuMkM0Ljk2MSw3LjksNC43MjgsOC4yMjQsNC41MTMsOC41NTdaTTUuOTc3LDYuNjc2bC0uMjM1LS4yMTljLjI3Ni0uMy41NjktLjU4NS44Ny0uODU3bC4yMTUuMjM5QzYuNTMzLDYuMSw2LjI0Nyw2LjM4Niw1Ljk3Nyw2LjY3NlptMS43Ny0xLjYtLjE5My0uMjU3Yy4zMjMtLjI0NC42NjItLjQ3NywxLjAwNy0uNjkybC4xNy4yNzJDOC4zOTQsNC42MTQsOC4wNjMsNC44NDEsNy43NDcsNS4wNzlabTE1LjcwNS0uNTU4LS4wMTgtLjAxMi4xNzUtLjI3LjAxOC4wMTFabS0xLjA0Ny0uNjE2Yy0uMzUtLjE4Ni0uNzEzLS4zNTgtMS4wNzgtLjUxMmwuMTI1LS4zYy4zNzQuMTU4Ljc0NS4zMzQsMS4xLjUyNFpNOS43NjksMy44MTVsLS4xNDYtLjI4Ni4wMTgtLjAwOWMuMzU2LS4xODEuNzI0LS4zNDksMS4wOTMtLjVsLjEyMS4zYy0uMzYxLjE0Ny0uNzIuMzExLTEuMDY4LjQ4OFptMTAuNDQtLjgzOGMtLjM3Ny0uMTIyLS43NjQtLjIyOS0xLjE1MS0uMzE3bC4wNzItLjMxM2MuNC4wOTEuNzkyLjIsMS4xNzguMzI1Wm0tOC4yMjktLjA2LS4wOTQtLjMwN2MuMzg4LS4xMTkuNzg2LS4yMjMsMS4xODItLjMwOGwuMDY3LjMxNEMxMi43NDcsMi43LDEyLjM1OSwyLjgsMTEuOTgsMi45MTdabTUuOS0uNDczYy0uMzkzLS4wNTUtLjc5My0uMDkyLTEuMTg4LS4xMTNsLjAxNi0uMzIxYy40MDUuMDIxLjgxNC4wNTksMS4yMTYuMTE1Wm0tMy41NzItLjAyNi0uMDQtLjMxOWMuNC0uMDUuODEyLS4wODMsMS4yMTgtLjFsLjAxMi4zMjFDMTUuMTA2LDIuMzM3LDE0LjcwNSwyLjM2OSwxNC4zMTIsMi40MThaIiBzdHlsZT0iZmlsbDpncmF5Ii8+PGNpcmNsZSBjeD0iMTYiIGN5PSIxNS45OTgiIHI9IjEwLjcwOCIgc3R5bGU9ImZpbGw6bmF2eSIvPjxjaXJjbGUgY3g9IjIwLjQzNSIgY3k9IjExLjU2MiIgcj0iMy4xMzYiIHN0eWxlPSJmaWxsOiNmZmYiLz48Y2lyY2xlIGN4PSIyNi43MDgiIGN5PSI1LjI5IiByPSIzLjEzNyIgc3R5bGU9ImZpbGw6bmF2eSIvPjxwYXRoIGQ9Ik0xMy4xLDIxLjM1MnYtLjc5SDkuNjI5VjE0LjMyNmgtLjl2Ny4wMjZIMTMuMSIgc3R5bGU9ImZpbGw6I2ZmZiIvPjxwYXRoIGQ9Ik0xNy45MTYsMjEuMzUyVjE2LjNoLS44djIuNzg1YzAsMS4wMzEtLjU0LDEuNzA2LTEuMzc4LDEuNzA2QS45NS45NSwwLDAsMSwxNC43LDE5LjhWMTYuM2gtLjh2My44MTdjMCwuODM4LjYyNiwxLjM3OCwxLjYwOSwxLjM3OGExLjg2MywxLjg2MywwLDAsMCwxLjY4Ny0uOTI1di43ODFoLjcyMyIgc3R5bGU9ImZpbGw6I2ZmZiIvPjxwYXRoIGQ9Ik0yMy43OTEsMjEuMzMzdi0uNjA3YS42NjQuNjY0LDAsMCwxLS4xNzMuMDE5Yy0uMjc5LDAtLjQzNC0uMTQ1LS40MzQtLjRWMTcuNTM2YzAtLjktLjY1NS0xLjM3OC0xLjktMS4zNzgtMS4yMjQsMC0xLjk3Ni40NzItMi4wMjQsMS42MzhoLjgxYy4wNjctLjYxNy40MzQtLjksMS4xODUtLjkuNzIzLDAsMS4xMjguMjcsMS4xMjguNzUydi4yMTJjMCwuMzM3LS4yLjQ4Mi0uODM4LjU1OWE1Ljc2Myw1Ljc2MywwLDAsMC0xLjYxOS4zMDgsMS4zMjcsMS4zMjcsMCwwLDAtLjg4NywxLjMxMWMwLC45MTYuNjM2LDEuNDU1LDEuNjU4LDEuNDU1YTIuMzYzLDIuMzYzLDAsMCwwLDEuNzE1LS43NDIuODU1Ljg1NSwwLDAsMCwuODI5LjY2NSwxLjk2NywxLjk2NywwLDAsMCwuNTQ5LS4wODdtLTEuNDA3LTEuNzI1YTEuMzY2LDEuMzY2LDAsMCwxLTEuNTEzLDEuMTg1Yy0uNjI2LDAtLjk5My0uMjIyLS45OTMtLjc3MSwwLS41My4zNTctLjc2MSwxLjIxNC0uODg3YTQsNCwwLDAsMCwxLjI5MS0uMjc5di43NTIiIHN0eWxlPSJmaWxsOiNmZmYiLz48L3N2Zz4=" alt="Lua"/>
+                <!-- Luau -->
+                <img src="https://raw.githubusercontent.com/luau-lang/site/6cc03660d7231640e67534d74a7ebbc6636cfb21/logo.svg" alt="Luau"/>
+            </div>
+        </div>
+
+        <!-- GitHub Repositories Section -->
+        <h2 class="section-title">> Repositories</h2>
+        <div id="repos-container">
+            <span class="status-msg">Loading repositories...</span>
+        </div>
+    </center>
+
+    <script>
+        const username = "fete3712-vmX";
+        const container = document.getElementById("repos-container");
+
+        async function loadRepos() {
+            try {
+                const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`);
+                
+                if (!response.ok) {
+                    throw new Error(`Status ${response.status}`);
+                }
+
+                const repos = await response.json();
+                container.innerHTML = "";
+
+                if (repos.length === 0) {
+                    container.innerHTML = `<span class="status-msg">No public repositories found.</span>`;
+                    return;
+                }
+
+                repos.forEach(repo => {
+                    const card = document.createElement("div");
+                    card.className = "repo-card";
+
+                    const desc = repo.description ? repo.description : "No description provided.";
+                    const lang = repo.language ? repo.language : "Plain Text";
+
+                    card.innerHTML = `
+                        <div>
+                            <a class="repo-name" href="${repo.html_url}" target="_blank" rel="noopener noreferrer">${repo.name}</a>
+                            <p class="repo-desc">${desc}</p>
+                        </div>
+                        <div class="repo-meta">
+                            <span class="repo-lang">&#9679; ${lang}</span>
+                            <span>&#9733; ${repo.stargazers_count} | &#9094; ${repo.forks_count}</span>
+                        </div>
+                        <a href="${repo.html_url}">Visit</a>
+                    `;
+                    container.appendChild(card);
+                });
+            } catch (error) {
+                container.innerHTML = `<span class="status-msg">Failed to load repositories. <a href="https://github.com/${username}" target="_blank" style="color: #33ff33;">View on GitHub</a></span>`;
+            }
+        }
+
+        loadRepos();
+    </script>
+</body>
